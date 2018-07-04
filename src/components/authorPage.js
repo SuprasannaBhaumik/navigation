@@ -29,7 +29,13 @@ class AuthorPage extends Component {
 		}	
 		
 		data = this.state.authors.map( (user, i) => {
-			return <li key={i}>{user.name}</li>
+			return (
+					<li key={i}>
+						<Link to={`/authors/${user.id}`}>
+							{user.name}
+						</Link>
+					</li>
+				)
 	 	});
 		
 		return(
